@@ -2,6 +2,7 @@ import json
 
 
 def filter_users_by_name(name):
+    """Fitern nach Name"""
     with open("users.json", "r") as file:
         users = json.load(file)
 
@@ -12,6 +13,7 @@ def filter_users_by_name(name):
 
 
 def filter_users_by_age(age: int):
+    """Fitern nach Alter"""
     with open("users.json", "r") as file:
         users = json.load(file)
     filtered_users = [user for user in users if user.get("age") == age]
@@ -25,6 +27,7 @@ def filter_users_by_age(age: int):
 
 
 def filter_users_by_email(email: str):
+    """Fitern nach Email"""
     with open("users.json", "r") as file:
         users = json.load(file)
     filtered_users = [user for user in users if user.get("email") == email]
@@ -38,6 +41,7 @@ def filter_users_by_email(email: str):
 
 
 def main():
+    """Main funktion"""
     filter_option = input("What would you like to filter by?: ").strip().lower()
 
     if filter_option == "name":
